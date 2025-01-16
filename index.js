@@ -1,7 +1,7 @@
 //node index.js scissors
 const process = require('process');
 
-const validOptions = ['rock', 'paper', 'scissors'];
+const validOptions = ['rock', 'paper', 'scissors', 'laser'];
 const arguments = process.argv.slice(2);
 const userChoice = arguments[0];
 const computerChoice = validOptions[Math.floor(Math.random() * validOptions.length)];
@@ -18,7 +18,8 @@ function determineWinner(playerInput, computerInput)  {
     if (
         (playerInput === 'scissors' && computerInput === 'paper') ||
         (playerInput === 'rock' && computerInput === 'scissors') ||
-        (playerInput === 'paper' && computerInput === 'rock')  
+        (playerInput === 'paper' && computerInput === 'rock') ||
+        (playerInput === 'laser' && computerInput === 'rock')  
     ) {
         return "You win!";
     }
